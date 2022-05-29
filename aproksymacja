@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+def f(x):
+    return 215.14 * x + 1629.32
+
+x = []
+y = []
+with open("chujxy.txt", "r") as file:
+    for line in file:
+        x.append(float(line.split()[0]))
+        y.append(float(line.split()[1]))
+
+fx = []
+for i in range(len(x)):
+    fx.append(f(x[i]))
+
+plt.plot(x, y, "o", label="dane")
+plt.plot(x, fx, label="funkcja")
+plt.legend()
+plt.show()
